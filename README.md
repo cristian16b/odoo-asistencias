@@ -21,3 +21,8 @@ odoo@correo.com
 
 db
 odoo18_test
+
+
+para regenerar y recargar aplicaciones (actualiza todo)
+
+ ./odoo-bin -c odoo.conf -u all -d odoo18_test
