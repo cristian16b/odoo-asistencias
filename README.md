@@ -34,4 +34,5 @@ luego de muchos cambios no viene mal hacer esto para regenerar
 
 luego 
 
- ./odoo-bin -c odoo.conf
+./odoo-bin -c /opt/odoo/odoo.conf
+
