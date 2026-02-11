@@ -3,6 +3,6 @@
         <field name="name">Asistencias por Departamento</field>
         <field name="res_model">department.attendance.wizard</field>
         <field name="view_mode">form</field>
-        <field name="target">new</field>
+        <!-- <field name="target">new</field> -->
     </record>
 </odoo>
