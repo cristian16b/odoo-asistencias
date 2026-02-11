@@ -12,6 +12,13 @@
                         <field name="start_time"/>
                     </group>
 
+                    <div class="mb-3">
+                        <button name="action_load_employees"
+                                type="object"
+                                string="Cargar empleados"
+                                class="btn-primary"/>
+                    </div>
+
                     <group string="Empleados">
                         <field name="employee_line_ids"
                                context="{'tree_view_ref': 'department_attendance.view_department_attendance_line_tree'}"/>

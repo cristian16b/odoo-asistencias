@@ -1,5 +1,6 @@
 from odoo import models, fields, api
-from datetime import datetime, timedelta
+from datetime import timedelta
+
 
 class DepartmentAttendanceLine(models.TransientModel):
     _name = 'department.attendance.line'
@@ -11,10 +12,22 @@ class DepartmentAttendanceLine(models.TransientModel):
         required=True,
         ondelete='cascade'
     )
-    employee_id = fields.Many2one('hr.employee', string="Empleado", required=True)
+
+    employee_id = fields.Many2one(
+        'hr.employee',
+        string="Empleado",
+        required=True,
+        readonly=True
+    )
+
     check_in = fields.Datetime(string="Entrada")
     hours_worked = fields.Float(string="Horas trabajadas")
-    check_out = fields.Datetime(string="Salida", compute="_compute_check_out")
+
+    check_out = fields.Datetime(
+        string="Salida",
+        compute="_compute_check_out",
+        store=False
+    )
 
     @api.depends('check_in', 'hours_worked')
     def _compute_check_out(self):
@@ -23,3 +36,4 @@ class DepartmentAttendanceLine(models.TransientModel):
                 line.check_out = line.check_in + timedelta(hours=line.hours_worked)
             else:
                 line.check_out = False
+
