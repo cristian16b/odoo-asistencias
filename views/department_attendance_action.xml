@@ -1,0 +1,8 @@
+<odoo>
+    <record id="action_department_attendance_wizard" model="ir.actions.act_window">
+        <field name="name">Asistencias por Departamento</field>
+        <field name="res_model">department.attendance.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

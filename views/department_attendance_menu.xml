@@ -1,0 +1,16 @@
+<odoo>
+    <menuitem
+        id="menu_department_attendance_root"
+        name="Asistencias"
+        parent="hr.menu_hr_root"
+        sequence="50"
+    />
+
+    <menuitem
+        id="menu_department_attendance_wizard"
+        name="Asistencias por Departamento"
+        parent="menu_department_attendance_root"
+        action="action_department_attendance_wizard"
+        sequence="10"
+    />
+</odoo>

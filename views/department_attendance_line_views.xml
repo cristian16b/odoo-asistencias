@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_department_attendance_line_tree" model="ir.ui.view">
+        <field name="name">department.attendance.line.tree</field>
+        <field name="model">department.attendance.line</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="employee_id" readonly="1"/>
+                <field name="check_in"/>
+                <field name="hours_worked"/>
+                <field name="check_out"/>
+            </list>
+        </field>
+    </record>
+</odoo>

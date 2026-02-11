@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_department_attendance_wizard_form" model="ir.ui.view">
+        <field name="name">department.attendance.wizard.form</field>
+        <field name="model">department.attendance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Asistencias por Departamento">
+                <sheet>
+
+                    <group>
+                        <field name="department_id"/>
+                        <field name="start_date"/>
+                        <field name="start_time"/>
+                    </group>
+
+                    <group string="Empleados">
+                        <field name="employee_line_ids"
+                               context="{'tree_view_ref': 'department_attendance.view_department_attendance_line_tree'}"/>
+                    </group>
+
+                    <footer>
+                        <button name="action_confirm"
+                                type="object"
+                                string="Confirmar"
+                                class="btn-primary"/>
+                        <button string="Cancelar"
+                                special="cancel"
+                                class="btn-secondary"/>
+                    </footer>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+
+
+
