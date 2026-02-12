@@ -24,7 +24,7 @@
                                context="{'tree_view_ref': 'department_attendance.view_department_attendance_line_tree'}"/>
                     </group>
 
-                    <footer>
+                    <div class="mb-3">
                         <button name="action_confirm"
                                 type="object"
                                 string="Confirmar"
@@ -32,7 +32,17 @@
                         <button string="Cancelar"
                                 special="cancel"
                                 class="btn-secondary"/>
-                    </footer>
+                    </div>
+
+                    <!-- <footer>
+                        <button name="action_confirm"
+                                type="object"
+                                string="Confirmar"
+                                class="btn-primary"/>
+                        <button string="Cancelar"
+                                special="cancel"
+                                class="btn-secondary"/>
+                    </footer> -->
 
                 </sheet>
             </form>

@@ -2,7 +2,7 @@ from odoo import models, fields, api
 from datetime import timedelta
 
 
-class DepartmentAttendanceLine(models.TransientModel):
+class DepartmentAttendanceLine(models.Model):
     _name = 'department.attendance.line'
     _description = 'Líneas de empleados en el wizard de asistencia'
 

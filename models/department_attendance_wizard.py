@@ -2,7 +2,7 @@ from odoo import models, fields, api
 from datetime import datetime, timedelta
 
 
-class DepartmentAttendanceWizard(models.TransientModel):
+class DepartmentAttendanceWizard(models.Model):
     _name = 'department.attendance.wizard'
     _description = 'Wizard para registrar asistencias por departamento'
 
@@ -39,7 +39,6 @@ class DepartmentAttendanceWizard(models.TransientModel):
             ('department_id', '=', self.department_id.id)
         ])
 
-        # Limpiar líneas anteriores
         self.employee_line_ids = [(5, 0, 0)]
 
         base_dt = datetime.combine(
@@ -56,6 +55,15 @@ class DepartmentAttendanceWizard(models.TransientModel):
             }))
 
         self.employee_line_ids = lines
+
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'department.attendance.wizard',
+            'view_mode': 'form',
+            'res_id': self.id,
+            'target': 'current',
+        }
+
 
     # 🔹 CONFIRMAR ASISTENCIAS
     def action_confirm(self):
