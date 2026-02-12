@@ -74,7 +74,7 @@ class DepartmentAttendanceWizard(models.Model):
             if not line.employee_id:
                 continue  # seguridad extra
 
-            if line.check_in and line.hours_worked:
+            if line.check_in:
                 check_out_dt = line.check_in + timedelta(hours=line.hours_worked)
             else:
                 check_out_dt = False
